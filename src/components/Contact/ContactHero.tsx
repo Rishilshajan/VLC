@@ -6,7 +6,7 @@ const ContactHero: React.FC = () => {
         <section className="w-full flex justify-center py-12 md:py-20 relative px-4">
             <div className="relative w-full max-w-[1200px]">
                 {/* Image Container with Blob Shape */}
-                <div className="w-full relative z-0">
+                <div className="w-full relative z-0 bg-[#123042] rounded-[30px] overflow-hidden">
                     <img
                         src={contactHero}
                         alt="Contact Us"
