@@ -1,25 +1,25 @@
 import React from 'react';
-import heroWaveImg from '../../assets/hero_wave.jpeg'; 
+import heroBlob from '../../assets/about-hero-blob.png';
 
 const AboutHero: React.FC = () => {
   return (
-    <section className="w-full flex justify-center py-10">
-      <div className="container mx-auto px-4">
-        {/* Dark container mimicking the Blob shape */}
-        <div className="relative w-full max-w-6xl mx-auto min-h-[400px] md:min-h-[500px] bg-[#1a1a1a] rounded-[3rem] md:rounded-[5rem] overflow-hidden flex flex-col justify-center items-center text-center px-6 md:px-20 text-white">
-          
-          {/* Background Image Layer */}
-          <div className="absolute inset-0 bg-black/40 z-0">
-            { <img src={heroWaveImg} className="w-full h-full object-cover opacity-50" alt="Background" /> }
-          </div>
+    <section className="w-full flex justify-center pt-8 pb-10">
+      <div className="container mx-auto px-4 flex justify-center">
+        <div className="relative w-full max-w-[1273px]">
+          {/* Main Blob Image */}
+          <img
+            src={heroBlob}
+            alt="Who We Are - Team Meeting"
+            className="w-full h-auto object-contain"
+          />
 
-          {/* Content */}
-          <div className="relative z-10 flex flex-col gap-6 max-w-3xl">
-            <h1 className="font-semibold text-4xl md:text-6xl text-white">
+          {/* Text Overlay */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 md:px-16 text-white pt-8">
+            <h1 className="font-semibold text-3xl md:text-[56px] leading-tight md:leading-[1.2] mb-2 md:mb-4">
               Who We Are
             </h1>
-            <p className="font-light text-lg md:text-xl text-white/90 leading-relaxed">
-              We help organisations turn purpose into measurable progress, creating lasting impact across the sector.
+            <p className="font-normal italic text-sm md:text-[20px] leading-relaxed md:leading-[30px] max-w-xl text-white/90">
+              We help organisations turn purpose into measurable progress, creating lasting impact across the sector
             </p>
           </div>
         </div>
