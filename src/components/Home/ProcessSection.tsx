@@ -3,13 +3,13 @@ import { Network, Target } from 'lucide-react';
 
 // --- Custom Icon Definition ---
 const Database02Icon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24" 
-    width={24} 
-    height={24} 
-    color={"#0c87be"} 
-    fill={"none"} 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    width={24}
+    height={24}
+    color={"#0c87be"}
+    fill={"none"}
     {...props}
   >
     <ellipse cx="12" cy="5" rx="8" ry="3" stroke="#0c87be" strokeWidth="1.5"></ellipse>
@@ -23,8 +23,9 @@ const Database02Icon = (props: React.SVGProps<SVGSVGElement>) => (
 const ProcessSection: React.FC = () => {
   return (
     <section className="w-full py-20 bg-white flex justify-center">
+
       {/* Main Container */}
-      <div 
+      <div
         className="bg-[#E6F7FF] rounded-[50px] relative"
         style={{
           width: '1187px',
@@ -32,15 +33,15 @@ const ProcessSection: React.FC = () => {
           padding: '80px 40px',
         }}
       >
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 h-full relative">
 
           {/* --- COLUMN 1: DATA --- */}
           <div className="flex flex-col items-center text-left px-6 relative">
             <div className="mb-6 text-[#0C87BE]">
-              <Database02Icon width={112} height={112} /> 
+              <Database02Icon width={112} height={112} />
             </div>
-            
+
             <h3 className="font-semibold text-[20px] leading-[30px] text-[#123042] mb-8">
               Data
             </h3>
@@ -52,14 +53,14 @@ const ProcessSection: React.FC = () => {
                   Develop frameworks for data collection that align with organisational goals.
                 </span>
               </p>
-              
+
               <p>
                 <span className="text-[#123042] font-semibold">Develop:</span>{' '}
                 <span className="text-[#0C87BE] font-normal">
                   Build tools, surveys, and systems for efficient data collection and storage.
                 </span>
               </p>
-              
+
               <p>
                 <span className="text-[#123042] font-semibold">Implement:</span>{' '}
                 <span className="text-[#0C87BE] font-normal">
@@ -75,16 +76,14 @@ const ProcessSection: React.FC = () => {
               </p>
             </div>
 
-            {/* Vertical Divider */}
             <div className="hidden md:block absolute right-0 top-10 bottom-0 w-[2px] bg-[#9BBECE] h-[400px] opacity-70"></div>
           </div>
 
 
           {/* --- COLUMN 2: DECISION --- */}
           <div className="flex flex-col items-center text-left px-6 relative">
-            {/* Added -rotate-90 class to tilt the icon to the left */}
             <div className="mb-6 text-[#0C87BE] -rotate-90">
-               <Network strokeWidth={1.5} size={112} />
+              <Network strokeWidth={1.5} size={112} />
             </div>
 
             <h3 className="font-semibold text-[20px] leading-[30px] text-[#123042] mb-8">
@@ -98,7 +97,7 @@ const ProcessSection: React.FC = () => {
                   Interpret the collected data to derive insights and actionable findings.
                 </span>
               </p>
-              
+
               <p>
                 <span className="text-[#123042] font-semibold">Communicate:</span>{' '}
                 <span className="text-[#0C87BE] font-normal">
@@ -107,8 +106,7 @@ const ProcessSection: React.FC = () => {
               </p>
             </div>
 
-             {/* Vertical Divider */}
-             <div className="hidden md:block absolute right-0 top-10 bottom-0 w-[2px] bg-[#9BBECE] h-[400px] opacity-70"></div>
+            <div className="hidden md:block absolute right-0 top-10 bottom-0 w-[2px] bg-[#9BBECE] h-[400px] opacity-70"></div>
           </div>
 
 
@@ -129,7 +127,7 @@ const ProcessSection: React.FC = () => {
                   Use data-driven decisions to scale programmes, enhance outcomes, and expand reach.
                 </span>
               </p>
-              
+
               <p>
                 <span className="text-[#123042] font-semibold">Measure:</span>{' '}
                 <span className="text-[#0C87BE] font-normal">

@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  // Define navigation items with their specific paths
+  // Navigation paths
   const navItems = [
     { label: 'Home', path: '/' },
     { label: 'About Us', path: '/about-us' },
@@ -18,11 +18,11 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="w-full py-5 px-6 md:px-10 bg-white shadow-sm sticky top-0 z-50">
+    <header className="w-full py-5 px-6 md:px-10 bg-white sticky top-0 z-50">
       <div className="w-full flex items-center justify-between">
-        
+
         {/* Logo Section */}
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3" onClick={() => window.scrollTo(0, 0)}>
           <img
             src={vicLogo}
             alt="VIC Logo"
@@ -34,11 +34,12 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex items-center gap-2">
           {navItems.map((item) => {
             const isActive = currentPath === item.path;
-            
+
             return (
               <Link
                 key={item.label}
                 to={item.path}
+                onClick={() => window.scrollTo(0, 0)}
                 className={cn(
                   "px-6 py-2.5 rounded-full transition-all duration-200 font-sans font-normal text-[16px] leading-none tracking-normal",
                   isActive
@@ -50,10 +51,10 @@ const Header: React.FC = () => {
               </Link>
             );
           })}
-          
+
           {/* Contact Us Button */}
-          <Link to="/contact">
-            <Button 
+          <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+            <Button
               className="ml-4 rounded-full font-sans font-normal text-[16px] leading-none tracking-normal bg-[#123042] text-[#6AC777] hover:bg-[#123042]/90 hover:text-[#6AC777]"
             >
               Contact Us

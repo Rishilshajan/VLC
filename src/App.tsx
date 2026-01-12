@@ -7,10 +7,12 @@ import Resources from './pages/Resources';
 import Contact from './pages/Contact';
 import OurWork from './pages/OurWork';
 import Careers from './pages/Careers';
+import ScrollToTop from './components/ui/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-white font-sans text-vic-dark">
         <Header />
 
