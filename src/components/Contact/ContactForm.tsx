@@ -37,14 +37,6 @@ const ContactForm: React.FC = () => {
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center justify-between gap-[10px]">
-                    <a
-                        href="https://calendly.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-[210px] h-[58px] bg-[#C8E5F2] text-[#0C87BE] rounded-[30px] font-medium hover:bg-[#bde0ef] transition-colors flex items-center justify-center cursor-pointer"
-                    >
-                        Schedule a Meeting
-                    </a>
                     <button
                         type="submit"
                         className="w-[210px] h-[58px] bg-[#0C87BE] text-[#ffffff] rounded-[30px] font-medium hover:bg-[#105a80] transition-colors flex items-center justify-center"

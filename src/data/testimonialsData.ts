@@ -9,7 +9,7 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
     {
         id: 1,
-        text: "...was incredibly thorough in their investigation, taking everyone from grassroots stakeholders to leadership along to gain a holistic view of our work. I truly appreciated their deep dive approach. It showed a real commitment to understanding the complexities of our world.",
+        text: "“VIC was incredibly thorough in their investigation, taking everyone from grassroots stakeholders to leadership along to gain a holistic view of our work. I truly appreciated their deep dive approach. It showed a real commitment to understanding the complexities of our world.”",
         author: "Sarah Mishra",
         role: "Senior Director",
         organization: "REAP Benefit Foundation"

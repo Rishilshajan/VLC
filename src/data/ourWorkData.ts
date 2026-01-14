@@ -3,7 +3,7 @@ export interface WorkService {
     title: string;
     items?: string[];
     description?: string;
-    image?: string; // For the hover background
+    image?: string;
 }
 
 export const workServices: WorkService[] = [
@@ -55,7 +55,7 @@ export const workServices: WorkService[] = [
         id: 5,
         title: "CSR & SDG Alignment",
         description: "Evaluated an education project with a reach of 3,000+ students and 60+ schools in Karnataka.",
-        image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=500&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=500&auto=format&fit=crop"
     },
     {
         id: 6,
@@ -66,6 +66,6 @@ export const workServices: WorkService[] = [
             "MEL Framework",
             "Building customised dashboards and reporting mechanisms"
         ],
-        image: "https://images.unsplash.com/photo-1526304640152-d4619684e484?q=80&w=500&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop"
     }
 ];
