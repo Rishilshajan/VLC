@@ -27,8 +27,18 @@ const CareersHero: React.FC = () => {
                 </div>
             </div>
 
-            {/* Desktop Layout */}
+            {/* Desktop */}
             <div className="hidden md:block relative w-full max-w-[1246px]">
+
+                {/* Mobile */}
+                <div className="md:hidden w-full flex justify-center mb-8">
+                    <img
+                        src={careersMobile}
+                        alt="Careers at VIC"
+                        className="w-full h-full object-cover"
+                    />
+                </div>
+
                 {/* Image Container with Blob Shape */}
                 <div className="w-full relative z-0  rounded-[30px] overflow-hidden">
                     <img

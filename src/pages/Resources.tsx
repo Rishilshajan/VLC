@@ -20,20 +20,20 @@ const Resources: React.FC = () => {
                 </div>
 
                 {/* Pagination */}
-                <div className="flex items-center justify-between w-[868px] mt-8">
+                <div className="flex flex-wrap md:flex-nowrap items-center justify-between w-full max-w-[868px] mt-8 gap-y-6 md:gap-y-0">
                     <button
-                        className="w-[153px] h-[58px] rounded-[30px] bg-[#C8E5F2] text-[#0C87BE] font-['Poppins'] font-medium text-[16px] flex items-center justify-center gap-[10px] hover:bg-[#b8daea] transition-colors"
+                        className="order-2 md:order-1 w-[153px] h-[58px] rounded-[30px] bg-[#C8E5F2] text-[#0C87BE] font-['Poppins'] font-medium text-[16px] flex items-center justify-center gap-[10px] hover:bg-[#b8daea] transition-colors"
                         disabled
                     >
                         <span>&larr;</span> Previous
                     </button>
 
-                    <div className="flex gap-[10px]">
+                    <div className="flex gap-[5px] md:gap-[10px] order-1 md:order-2 w-full md:w-auto justify-center overflow-x-auto px-2 md:px-0">
                         {[1, 2, 3, 4, 5, 6, 7].map((num) => (
                             <button
                                 key={num}
                                 onClick={() => setCurrentPage(num)}
-                                className={`w-[40px] h-[40px] rounded-[5px] flex items-center justify-center text-[14px] font-['Poppins'] font-medium transition-colors border ${currentPage === num
+                                className={`w-[35px] h-[35px] md:w-[40px] md:h-[40px] flex-shrink-0 rounded-[5px] flex items-center justify-center text-[12px] md:text-[14px] font-['Poppins'] font-medium transition-colors border ${currentPage === num
                                     ? 'bg-[#0C87BE] border-[#0C87BE] text-white'
                                     : 'bg-white border-[#0C87BE] text-[#0C87BE] hover:bg-[#f0f9fc]'
                                     }`}
@@ -44,7 +44,7 @@ const Resources: React.FC = () => {
                     </div>
 
                     <button
-                        className="w-[120px] h-[58px] rounded-[30px] bg-[#C8E5F2] text-[#0C87BE] font-['Poppins'] font-medium text-[16px] flex items-center justify-center gap-[10px] hover:bg-[#b8daea] transition-colors"
+                        className="order-3 md:order-3 w-[120px] h-[58px] rounded-[30px] bg-[#C8E5F2] text-[#0C87BE] font-['Poppins'] font-medium text-[16px] flex items-center justify-center gap-[10px] hover:bg-[#b8daea] transition-colors"
                     >
                         Next <span>&rarr;</span>
                     </button>

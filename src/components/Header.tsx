@@ -33,8 +33,8 @@ const Header: React.FC = () => {
           <Link
             to="/"
             className={cn(
-              "fixed top-5 left-6 md:left-10 z-[90] flex items-center gap-3 transition-opacity duration-200",
-              !isMenuOpen ? "bg-white/70 backdrop-blur-md border border-white/20 shadow-sm rounded-[24px] p-2 pr-6 hover:bg-white/90 opacity-100" : "opacity-0 pointer-events-none"
+              "fixed top-5 left-6 md:left-10 z-[100] flex items-center gap-3 transition-opacity duration-200",
+              !isMenuOpen ? "bg-white/70 backdrop-blur-md border border-black/5 shadow-sm rounded-[24px] p-2 pr-6 hover:bg-white/90 opacity-100" : "opacity-0 pointer-events-none"
             )}
             onClick={() => window.scrollTo(0, 0)}
           >
@@ -90,7 +90,7 @@ const Header: React.FC = () => {
           {/* Mobile Hamburger Button */}
           <button
             className={cn(
-              "md:hidden fixed top-5 right-6 z-[90] flex items-center justify-center transition-opacity duration-200 bg-white/70 backdrop-blur-md border border-white/20 shadow-sm rounded-full w-12 h-12",
+              "md:hidden fixed top-5 right-6 z-[100] flex items-center justify-center transition-opacity duration-200 bg-white/70 backdrop-blur-md border border-black/5 shadow-sm rounded-full w-12 h-12",
               isMenuOpen ? "opacity-0 pointer-events-none" : "opacity-100"
             )}
             onClick={() => setIsMenuOpen(!isMenuOpen)}

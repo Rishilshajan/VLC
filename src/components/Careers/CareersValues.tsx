@@ -4,7 +4,7 @@ const CareersValues: React.FC = () => {
     return (
         <section className="container mx-auto px-8 md:px-4 pt-4 md:pt-6 pb-8 md:pb-12">
 
-            {/* Main Content Box - Border removed */}
+            {/* Main Content Box */}
             <div className="w-full max-w-[841px] mx-auto relative">
 
                 {/* Mission Driven Team Intro */}

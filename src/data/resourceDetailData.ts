@@ -1,3 +1,5 @@
+import Resource1 from '../assets/Resource1.jpg';
+
 export interface ResourceDetailData {
     title: string;
     author: string;
@@ -13,11 +15,11 @@ export const resourceDetailData: ResourceDetailData = {
     title: "Prayoga Institute of Education Research - Kriya",
     author: "Tobey Marshall",
     date: "4th July 2025",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=500&auto=format&fit=crop",
+    image: Resource1,
     sections: [
         {
             heading: "Kriya Programme",
-            content: "The Kriya programme fosters experiential learning by engaging students in hands-on activities that nurture scientific temperament and higher-order thinking skills. It is targeted towards students from Grade 6 to Grade 10 across schools in Karnataka. The programme provides science lab facilities, a teaching curriculum, teacher training, online academic support and coordination, and knowledge and practice sharing among teachers and experts. Teachers are empowered with advanced pedagogical strategies, subject expertise, and effective classroom management techniques to enhance their teaching capabilities. For CSR Impact Assessment compliance, VIC is evaluating the impact of the Kriya programme on students' interest and learning in science, teachers' teaching experiences, and the school ecosystem's role in supporting and encouraging sustain experiential learning."
+            content: "The Kriya programme fosters experiential learning by engaging students in hands-on activities that nurture scientific temperament and higher-order thinking skills. It is targeted towards students from Grade 6 to Grade 10 across schools in Karnataka.\n\nThe programme provides science lab facilities, a teaching curriculum, teacher training, online academic support and coordination, and knowledge and practice sharing among teachers and experts. Teachers are empowered with advanced pedagogical strategies, subject expertise, and effective classroom management techniques to enhance their teaching capabilities.\n\nFor CSR Impact Assessment compliance, VIC is evaluating the impact of the Kriya programme on students' interest and learning in science, teachers' teaching experiences, and the school ecosystem's role in supporting and encouraging sustain experiential learning."
         },
         {
             heading: "On-Ground Story",
