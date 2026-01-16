@@ -45,33 +45,23 @@ const TeamMemberDetail: React.FC = () => {
     }
 
     return (
-        <main className="w-full relative bg-white pb-20 pt-[120px] overflow-hidden min-h-screen">
+        <main className="w-full relative bg-white pb-10 pt-[60px] lg:pt-[120px] overflow-hidden min-h-screen">
             <div className="container mx-auto px-4 relative z-10">
                 <div className="flex flex-col lg:flex-row items-start justify-center mobile-stack-gap lg:gap-[137px]">
 
                     {/* Left Side: Image Card + Decor */}
-                    <div className="relative shrink-0 mx-auto lg:mx-0 mt-20 lg:mt-0 lg:-translate-x-6">
+                    <div className="relative shrink-0 mx-auto lg:mx-0 mt-[-6px] lg:mt-0 lg:-translate-x-6">
                         {/* Decorative Branch Image */}
                         <img
                             src={BranchImg}
                             alt="Decorative Branch"
-                            className="absolute pointer-events-none z-20"
-                            style={{
-                                width: '488.13px',
-                                height: '623.99px',
-                                top: '-108.65px',
-                                left: '-310px',
-                                transform: 'rotate(-163.21deg) scaleY(-1)',
-                                opacity: 1
-                            }}
+                            className="absolute pointer-events-none z-0 lg:z-20 w-[688.13px] h-[823.99px] lg:w-[488.13px] lg:h-[623.99px] left-[calc(50%-380px)] top-[-200px] rotate-[40deg] lg:left-[-310px] lg:top-[-108.65px] lg:[transform:rotate(-163.21deg)_scaleY(-1)]"
                         />
 
                         {/* Card */}
                         <div
-                            className="relative rounded-[30px] overflow-hidden shadow-xl z-10"
+                            className="relative rounded-[30px] overflow-hidden shadow-xl z-10 w-full max-w-[300px] aspect-[337/450] mx-auto lg:mx-0 lg:w-[337px] lg:h-[501px] lg:max-w-none lg:aspect-auto"
                             style={{
-                                width: '337px',
-                                height: '501px',
                                 backgroundColor: '#E2F4FC',
                             }}
                         >
@@ -85,7 +75,7 @@ const TeamMemberDetail: React.FC = () => {
                             <div
                                 className="absolute bottom-0 left-0 w-full flex flex-col items-center justify-center text-center"
                                 style={{
-                                    width: '337px',
+                                    width: '100%',
                                     height: '111px',
                                     background: 'linear-gradient(180deg, rgba(43, 43, 43, 0.1) 0%, rgba(43, 43, 43, 0.5) 100%)',
                                     backdropFilter: 'blur(26.3px)',
@@ -100,7 +90,7 @@ const TeamMemberDetail: React.FC = () => {
                         </div>
 
                         {/* Social Icons below card */}
-                        <div className="flex justify-center gap-[10px] mt-6 relative z-10">
+                        <div className="flex justify-center gap-[10px] mt-10 relative z-10">
                             <a href={member.facebook || "#"} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
                                 <FacebookIcon />
                             </a>
@@ -117,7 +107,7 @@ const TeamMemberDetail: React.FC = () => {
                     </div>
 
                     {/* Right Side: Content */}
-                    <div className="max-w-[500px] pt-0 lg:pt-[100px]">
+                    <div className="max-w-[500px] pt-10 lg:pt-[100px]">
                         {/* Education / Heading */}
                         {member.education && (
                             <h2 className="font-poppins font-light text-[16px] leading-[100%] text-[#123042] mb-6 whitespace-pre-line leading-relaxed">

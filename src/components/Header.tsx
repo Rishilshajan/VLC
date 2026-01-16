@@ -26,7 +26,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="w-full py-5 px-6 md:px-10 bg-white relative z-40">
+      <header className="w-full py-5 px-6 md:px-10 bg-transparent md:bg-white relative z-40">
         <div className="w-full flex items-center justify-between">
 
           {/* Fixed Logo (Visible) */}
@@ -90,27 +90,22 @@ const Header: React.FC = () => {
           {/* Mobile Hamburger Button */}
           <button
             className={cn(
-              "md:hidden z-[90] p-0 relative transition-opacity duration-200",
+              "md:hidden fixed top-5 right-6 z-[90] flex items-center justify-center transition-opacity duration-200 bg-white/70 backdrop-blur-md border border-white/20 shadow-sm rounded-full w-12 h-12",
               isMenuOpen ? "opacity-0 pointer-events-none" : "opacity-100"
             )}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <motion.svg
-              width="48"
-              height="48"
-              viewBox="0 0 48 48"
+              width="22"
+              height="11"
+              viewBox="0 0 22 11"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               animate={isMenuOpen ? "open" : "closed"}
             >
-              <foreignObject x="-26.3" y="-26.3" width="100.6" height="100.6">
-                <div style={{ backdropFilter: 'blur(13.15px)', clipPath: 'url(#bgblur_0_6167_295_clip_path)', height: '100%', width: '100%' }}></div>
-              </foreignObject>
-              <rect width="48" height="48" rx="24" fill="url(#paint0_linear_6167_295)" />
-
               {/* Top Line */}
               <motion.line
-                x1="14.4736" y1="20.0526" x2="33.5263" y2="20.0526"
+                x1="1" y1="1" x2="20.0526" y2="1"
                 stroke="black" strokeWidth="2" strokeLinecap="round"
                 variants={{
                   closed: { rotate: 0, y: 0 },
@@ -122,7 +117,7 @@ const Header: React.FC = () => {
 
               {/* Bottom Line */}
               <motion.line
-                x1="14.4736" y1="28.4736" x2="33.5263" y2="28.4736"
+                x1="1" y1="9.42102" x2="20.0526" y2="9.42102"
                 stroke="black" strokeWidth="2" strokeLinecap="round"
                 variants={{
                   closed: { rotate: 0, y: 0 },
@@ -131,14 +126,6 @@ const Header: React.FC = () => {
                 transition={{ type: "spring", stiffness: 200, damping: 20 }}
                 style={{ originX: "50%", originY: "50%" }}
               />
-
-              <defs>
-                <clipPath id="bgblur_0_6167_295_clip_path" transform="translate(26.3 26.3)"><rect width="48" height="48" rx="24" /></clipPath>
-                <linearGradient id="paint0_linear_6167_295" x1="-0.614947" y1="55.2941" x2="49.0987" y2="54.9551" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="white" stopOpacity="0.8" />
-                  <stop offset="1" stopColor="white" stopOpacity="0.7" />
-                </linearGradient>
-              </defs>
             </motion.svg>
           </button>
         </div>

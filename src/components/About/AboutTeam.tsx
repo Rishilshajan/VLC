@@ -11,20 +11,20 @@ const AboutTeam: React.FC = () => {
                     Our Team
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[45px] justify-items-center w-fit mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[45px] justify-items-center w-full md:w-fit mx-auto">
                     {teamMembers.map((member, index) => (
                         <Link
                             to={`/about-us/team/${member.id}`}
                             key={index}
-                            className="bg-[#E2F4FC] rounded-[30px] flex flex-col items-center justify-center p-6 text-center hover:shadow-lg transition-shadow duration-300 shrink-0 block overflow-hidden" // Added overflow-hidden to clip corners if needed
-                            style={{ width: '337px', height: '501px' }}
+                            className="bg-[#E2F4FC] rounded-[30px] flex flex-col items-center justify-center p-6 text-center hover:shadow-lg transition-shadow duration-300 shrink-0 block overflow-hidden w-full md:max-w-[337px] mx-auto aspect-[337/481]"
+                            style={{}}
                         >
                             {/* Image Circle */}
                             <div className="w-[150px] h-[150px] mb-6 rounded-full overflow-hidden border-4 border-white shadow-sm mx-auto relative">
                                 <img
                                     src={member.image}
                                     alt={member.name}
-                                    className="w-full h-full object-cover"
+                                    className={`w-full h-full object-cover ${member.id === 'harshali-ghule' ? 'object-top' : 'object-center'}`}
                                 />
                                 <div
                                     className="absolute inset-0"

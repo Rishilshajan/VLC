@@ -10,7 +10,7 @@ const OurWorkHero: React.FC = () => {
                     <img
                         src={ourWorkHero}
                         alt="Our Work"
-                        className="w-full h-auto object-cover"
+                        className="w-full h-auto object-cover translate-x-[10px] md:translate-x-0"
                     />
 
                     {/* Overlay Text */}

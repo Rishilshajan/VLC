@@ -109,6 +109,7 @@ const ProcessSection: React.FC = () => {
               </div>
 
               <div className="hidden md:block absolute right-0 top-10 bottom-0 w-[2px] bg-[#9BBECE] h-[400px] opacity-70"></div>
+
               {/* Mobile Separator */}
               <div className="block md:hidden w-full h-[1px] border-t border-dashed border-[#9BBECE] my-8 relative"></div>
             </div>
