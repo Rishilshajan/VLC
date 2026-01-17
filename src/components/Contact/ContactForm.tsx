@@ -22,7 +22,7 @@ const ContactForm: React.FC = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        const APPS_SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL;
+        const APPS_SCRIPT_URL = import.meta.env.VITE_APPS_CONTACT_URL;
 
         if (!APPS_SCRIPT_URL) {
             alert("Google Script URL not configured.");
@@ -31,18 +31,12 @@ const ContactForm: React.FC = () => {
         }
 
         try {
-            const formDataToSend = new FormData();
-
-            formDataToSend.append("name", formData.name);
-            formDataToSend.append("email", formData.email);
-            formDataToSend.append("phone", formData.phone);
-            formDataToSend.append("query", formData.query);
-            formDataToSend.append("meetingDate", formData.meetingDate);
-            formDataToSend.append("meetingTime", formData.meetingTime);
-
             const response = await fetch(APPS_SCRIPT_URL, {
                 method: "POST",
-                body: formDataToSend
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData)
             });
 
             const result = await response.json();
