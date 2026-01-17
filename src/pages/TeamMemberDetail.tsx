@@ -46,8 +46,9 @@ const TeamMemberDetail: React.FC = () => {
 
     return (
         <main className="w-full relative bg-white pb-10 pt-[60px] lg:pt-[120px] overflow-hidden min-h-screen">
-            <div className="container mx-auto px-4 relative z-10">
-                <div className="flex flex-col lg:flex-row items-start justify-center mobile-stack-gap lg:gap-[137px]">
+            <div className="container mx-auto px-4 lg:px-0 lg:ml-0 lg:max-w-none relative z-10">
+                <div className="flex flex-col lg:flex-row items-start justify-center lg:justify-start mobile-stack-gap lg:gap-[137px] lg:pl-[204px]">
+
 
                     {/* Left Side: Image Card + Decor */}
                     <div className="relative shrink-0 mx-auto lg:mx-0 mt-[-6px] lg:mt-0 lg:-translate-x-6">

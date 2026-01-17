@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
               <h4 className="font-medium text-[15px] leading-none font-poppins">
                 Website
               </h4>
-              <div className="flex items-center justify-between w-full">
+              <div className="flex items-center justify-between w-full pt-1">
                 <a href="https://www.vic.org.in" target="_blank" rel="noreferrer" className="font-light text-[15px] leading-none font-poppins hover:underline opacity-90">
                   www.vic.org.in
                 </a>

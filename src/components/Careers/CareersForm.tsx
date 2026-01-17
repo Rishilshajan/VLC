@@ -8,7 +8,8 @@ const CareersForm: React.FC = () => {
         phone: '',
         qualification: '',
         experience: '',
-        profileInterest: ''
+        profileInterest: [] as string[],
+        interestAreas: ''
     });
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -16,11 +17,20 @@ const CareersForm: React.FC = () => {
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     // This URL will be replaced by the user after they deploy their Google Script
-    const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL || '';
+    const GOOGLE_SCRIPT_URL = import.meta.env.VITE_APPS_CAREER_URL;
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { id, value } = e.target;
         setFormData(prev => ({ ...prev, [id]: value }));
+    };
+
+    const handleCheckboxChange = (position: string) => {
+        setFormData(prev => ({
+            ...prev,
+            profileInterest: prev.profileInterest.includes(position)
+                ? prev.profileInterest.filter(p => p !== position)
+                : [...prev.profileInterest, position]
+        }));
     };
 
     const handleAttachClick = () => {
@@ -44,7 +54,7 @@ const CareersForm: React.FC = () => {
         e.preventDefault();
 
         if (!GOOGLE_SCRIPT_URL) {
-            alert("Please configure the Google Script URL in your .env file.");
+            alert("Google Script URL not configured.");
             return;
         }
 
@@ -52,67 +62,57 @@ const CareersForm: React.FC = () => {
         setSubmitStatus('idle');
 
         try {
-            // Convert file to base64 if exists
-            let fileData = "";
-            let fileName = "";
-            let mimeType = "";
+            const formDataToSend = new FormData();
 
+            // Text fields
+            formDataToSend.append("fullName", formData.fullName);
+            formDataToSend.append("email", formData.email);
+            formDataToSend.append("phone", formData.phone);
+            formDataToSend.append("qualification", formData.qualification);
+            formDataToSend.append("experience", formData.experience);
+            formDataToSend.append(
+                "profile",
+                formData.profileInterest.join(", ")
+            );
+            formDataToSend.append("interests", formData.interestAreas);
+
+            // File field (VERY IMPORTANT: name must be "resume")
             if (selectedFile) {
-                const reader = new FileReader();
-                fileData = await new Promise((resolve) => {
-                    reader.onload = (e) => resolve(e.target?.result as string);
-                    reader.readAsDataURL(selectedFile);
-                });
-                // Remove the "data:*/*;base64," part
-                fileData = fileData.split(',')[1];
-                fileName = selectedFile.name;
-                mimeType = selectedFile.type;
+                formDataToSend.append("resume", selectedFile);
             }
 
-            // Prepare payload for Google Script
-            // We use URLSearchParams or FormData depending on how the script is set up.
-            // For simple JSON handling in Apps Script, sending raw JSON is often easiest if we handle CORS correctly,
-            // but standard 'application/x-www-form-urlencoded' is more robust for simple scripts without complex CORS setup.
-            // However, for large files, JSON body is better. Let's try standard JSON fetch no-cors (opaque) or standard text.
-
-            // To ensure compatibility with most simple Apps Script setups, `text/plain` body with JSON content is a common trick to avoid CORS preflight,
-            // or we accept the opaque response.
-
-            const payload = {
-                ...formData,
-                fileName,
-                mimeType,
-                fileData
-            };
-
-            await fetch(GOOGLE_SCRIPT_URL, {
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
                 method: "POST",
-                body: JSON.stringify(payload)
-                // mode: "no-cors" // We might need this if we don't handle CORS in the script.
-                // However, if we want to know if it success, we hope for CORS headers from the script.
+                body: formDataToSend
             });
 
-            // Assuming success if no network error (with no-cors we can't read response)
-            // Or better, let's assume the user will deploy the script with proper CORS headers (instruction provided).
+            // Apps Script returns JSON
+            const result = await response.json();
 
-            setSubmitStatus('success');
-            setFormData({
-                fullName: '',
-                email: '',
-                phone: '',
-                qualification: '',
-                experience: '',
-                profileInterest: ''
-            });
-            handleRemoveFile();
+            if (result.status === "success") {
+                setSubmitStatus("success");
+                setFormData({
+                    fullName: '',
+                    email: '',
+                    phone: '',
+                    qualification: '',
+                    experience: '',
+                    profileInterest: [],
+                    interestAreas: ''
+                });
+                handleRemoveFile();
+            } else {
+                throw new Error(result.message || "Submission failed");
+            }
 
         } catch (error) {
             console.error("Submission Error:", error);
-            setSubmitStatus('error');
+            setSubmitStatus("error");
         } finally {
             setIsSubmitting(false);
         }
     };
+
 
     return (
         <section className="container mx-auto px-4 py-6 md:py-10">
@@ -201,15 +201,39 @@ const CareersForm: React.FC = () => {
                             />
                         </div>
 
-                        {/* Profile Looking For */}
+                        {/* Profile Looking For - Checkboxes */}
+                        <div className="relative">
+                            <label className="block text-[#23A6F0] font-normal text-base mb-3 px-1">
+                                Profile looking for (Interest area of work) <span className="text-red-500">*</span>
+                            </label>
+                            <div className="space-y-2.5 px-1">
+                                {['Intern', 'Analyst', 'Associate', 'Researcher', 'Senior Researcher', 'Other'].map((position) => (
+                                    <label key={position} className="flex items-center gap-3 cursor-pointer group">
+                                        <input
+                                            type="checkbox"
+                                            checked={formData.profileInterest.includes(position)}
+                                            onChange={() => handleCheckboxChange(position)}
+                                            className="w-4 h-4 rounded border-2 border-[#23A6F0] text-[#0077B6] focus:ring-2 focus:ring-[#23A6F0] focus:ring-offset-0 cursor-pointer checked:bg-[#0077B6] checked:border-[#0077B6]"
+                                            style={{
+                                                accentColor: '#0077B6'
+                                            }}
+                                        />
+                                        <span className="text-[#23A6F0] text-[15px] select-none">
+                                            {position}
+                                        </span>
+                                    </label>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Interest Areas */}
                         <div className="relative">
                             <input
                                 type="text"
-                                id="profileInterest"
-                                value={formData.profileInterest}
+                                id="interestAreas"
+                                value={formData.interestAreas}
                                 onChange={handleInputChange}
-                                required
-                                placeholder="Profile looking for (Interest area of work)"
+                                placeholder="Interest areas"
                                 className="w-full h-12 md:h-14 px-6 border border-[#23A6F0] rounded-full text-[#23A6F0] placeholder-[#23A6F0] placeholder:italic placeholder:font-light focus:outline-none focus:ring-1 focus:ring-[#23A6F0] bg-white text-sm"
                             />
                         </div>

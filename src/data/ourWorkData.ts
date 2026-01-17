@@ -2,7 +2,6 @@ import ImpactMeasurementImg from '../assets/Impact_measurement.jpg';
 import MELTrainingImg from '../assets/MEL_Training.jpg';
 import ResearchImg from '../assets/Research.jpg';
 import StrategyDevelopmentImg from '../assets/meeting.jpg';
-import CSRAlignmentImg from '../assets/CSR.jpg';
 import ToolFrameworkImg from '../assets/Tool&Framework.jpg';
 
 export interface WorkService {
@@ -29,16 +28,6 @@ export const workServices: WorkService[] = [
     },
     {
         id: 2,
-        title: "MEL Training & Capacity Building",
-        items: [
-            "Impact Assessment Frameworks",
-            "Data-based Decision Making",
-            "Designing Data Collection Tools"
-        ],
-        image: MELTrainingImg
-    },
-    {
-        id: 3,
         title: "Research",
         items: [
             "Quantitative",
@@ -50,7 +39,7 @@ export const workServices: WorkService[] = [
         image: ResearchImg
     },
     {
-        id: 4,
+        id: 3,
         title: "Strategy & Development",
         items: [
             "Advisory on Programme Design and optimum resource allocation",
@@ -59,13 +48,7 @@ export const workServices: WorkService[] = [
         image: StrategyDevelopmentImg
     },
     {
-        id: 5,
-        title: "CSR & SDG Alignment",
-        description: "Evaluated an education project with a reach of 3,000+ students and 60+ schools in Karnataka.",
-        image: CSRAlignmentImg
-    },
-    {
-        id: 6,
+        id: 4,
         title: "Tool & Framework Creation",
         items: [
             "Theory of Change",
@@ -74,5 +57,15 @@ export const workServices: WorkService[] = [
             "Building customised dashboards and reporting mechanisms"
         ],
         image: ToolFrameworkImg
-    }
+    },
+    {
+        id: 5,
+        title: "MEL Training & Capacity Building",
+        items: [
+            "Impact Assessment Frameworks",
+            "Data-based Decision Making",
+            "Designing Data Collection Tools"
+        ],
+        image: MELTrainingImg
+    },
 ];

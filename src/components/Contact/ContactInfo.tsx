@@ -37,7 +37,7 @@ const ContactInfo: React.FC = () => {
             {/* Map */}
             <div className="w-full h-[278px] bg-[#F5F5F5] rounded-xl overflow-hidden mt-4 relative group">
                 <iframe
-                    src="https://maps.google.com/maps?ll=19.1139537,72.8254566&z=17&t=m&hl=en&output=embed"
+                    src="https://maps.google.com/maps?ll=12.932661,77.630454&z=17&t=m&hl=en&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -50,7 +50,7 @@ const ContactInfo: React.FC = () => {
 
                 {/* Custom Blue Pin Overlay - Clickable */}
                 <a
-                    href="https://www.google.com/maps/place/RA+Foundation/@19.1139536,72.8205857,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7c9e87b373315:0x7fa0a8dccde95805!8m2!3d19.1139537!4d72.8254566!16s%2Fg%2F11clths507?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D"
+                    href="https://www.google.com/maps/place/Temple+Of+Miracles,+Koramangala/@12.932661,77.6278791,17z/data=!4m14!1m7!3m6!1s0x3bae1583cdd17003:0xd191323d640a75ee!2sTemple+Of+Miracles,+Koramangala!8m2!3d12.932661!4d77.630454!16s%2Fg%2F11fkw8mz5h!3m5!1s0x3bae1583cdd17003:0xd191323d640a75ee!8m2!3d12.932661!4d77.630454!16s%2Fg%2F11fkw8mz5h?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -mt-4 drop-shadow-lg cursor-pointer group"

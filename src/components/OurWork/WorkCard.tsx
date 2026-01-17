@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import type { WorkService } from '../../data/ourWorkData';
 
 interface WorkCardProps {
@@ -8,12 +7,10 @@ interface WorkCardProps {
 
 const WorkCard: React.FC<WorkCardProps> = ({ service }) => {
     const [isHovered, setIsHovered] = useState(false);
-    const navigate = useNavigate();
 
     return (
         <div
-            onClick={() => navigate(`/our-work/${service.id}`)}
-            className="relative w-full h-[400px] rounded-[30px] border border-[#23A6F0] overflow-hidden p-8 transition-all duration-500 ease-in-out cursor-pointer"
+            className="relative w-full h-[400px] rounded-[30px] border border-[#23A6F0] overflow-hidden p-8 transition-all duration-500 ease-in-out"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onTouchStart={() => setIsHovered(true)}
@@ -35,28 +32,29 @@ const WorkCard: React.FC<WorkCardProps> = ({ service }) => {
             />
 
             {/* Content */}
-            <div className="relative z-10 h-full flex flex-col justify-between font-poppins">
+            <div className="relative z-10 h-full flex flex-col font-poppins">
                 <h3 className={`font-medium text-[20px] transition-colors duration-300 ${isHovered ? 'text-white' : 'text-[#0C87BE]'}`}>
                     {service.title}
                 </h3>
 
                 <div
-                    className={`transition-colors duration-300 overflow-hidden ${isHovered ? 'text-white' : 'text-[#0C87BE]'}`}
+                    className={`transition-colors duration-300 overflow-hidden mt-12 ${isHovered ? 'text-white' : 'text-[#0C87BE]'}`}
                 >
                     {service.description ? (
                         <p className="text-[15px] leading-relaxed font-light">
                             {service.description}
                         </p>
                     ) : (
-                        <div className="flex flex-col gap-4">
+                        <ul className="flex flex-col gap-3 list-none">
                             {service.items?.map((item, index) => (
-                                <div key={index} className="flex flex-col gap-1">
-                                    <span className="font-semibold text-[15px] leading-tight">
+                                <li key={index} className="flex items-start gap-2">
+                                    <span className="text-[15px] mt-1">•</span>
+                                    <span className="font-light text-[15px] leading-tight">
                                         {item}
                                     </span>
-                                </div>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     )}
                 </div>
             </div>

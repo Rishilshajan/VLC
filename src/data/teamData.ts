@@ -1,10 +1,10 @@
-// Update interface and data
 import AbhishekImg from '../assets/Abhishek.png';
 import AditiImg from '../assets/Aditi.png';
 import HarshaliImg from '../assets/Harshali.png';
 import NasrullaImg from '../assets/Nasrulla.png';
 import ChaithraImg from '../assets/Chaithra.png';
 import VyshakhImg from '../assets/Vyshakh.png';
+import AravindImg from '../assets/Aravind.png';
 
 export interface TeamMember {
     id: string;
@@ -27,7 +27,7 @@ export const teamMembers: TeamMember[] = [
         image: VyshakhImg,
         education: "Master in Management. Cornell University, USA\nB.E. in Environmental Engineering, SJCE",
         bio: "Vyshakh Anand is well renowned expert in sustainability, environment, climate action among other sectors. Vyshakh was nominated as expert member by MoEF&CC for two consecutive terms for the prestigious SEAC in Karnataka, where large projects were assessed and suitable Environmental conditions were recommended.",
-        linkedin: "https://www.linkedin.com/in/abhardwaj?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B9oM9RxNFT22%2BAxtUY%2Bc4Gw%3D%3D",
+        linkedin: "https://www.linkedin.com/in/vyshakhlanand/",
         facebook: "#",
         instagram: "#",
         twitter: "#"
@@ -58,7 +58,7 @@ export const teamMembers: TeamMember[] = [
     },
     {
         id: "chaitra-rao",
-        name: "Chaithra Rao",
+        name: "Chaitra Rao",
         role: "Associate",
         image: ChaithraImg,
         education: "BSc Economics - Birkbeck, University of London",
@@ -68,6 +68,19 @@ export const teamMembers: TeamMember[] = [
         instagram: "#",
         twitter: "#"
     },
+    {
+        id: "aravind-subramaniam",
+        name: "Aravind Subramaniam",
+        role: "Senior Analyst",
+        image: AravindImg,
+        education: "M. Sc. Environmental Science, Periyar University, Salem",
+        bio: "Aravind is a conservation practitioner with over five years of experience in biodiversity monitoring, livelihood-linked conservation initiatives, human-wildlife conflict mitigation, community engagement, conservation outreach and wildlife crime studies. He has a proven track record in collaborating with government and academic institutions to drive applied research while working across diverse stakeholders to deliver data-driven conservation and development outcomes. He has strong grounding in herpetology, GIS mapping, and scientific reporting.",
+        linkedin: "https://www.linkedin.com/in/aravind-subramaniam-229407183/",
+        facebook: "#",
+        instagram: "#",
+        twitter: "#"
+    },
+
     {
         id: "aditi-madan",
         name: "Aditi Madan",
@@ -87,7 +100,7 @@ export const teamMembers: TeamMember[] = [
         image: HarshaliImg,
         education: "PhD - Indian Institute of Technology Bombay\nMA - Pune University",
         bio: "Harshali focuses on rural-urban transitions, infrastructure, and planning of transitioning settlements in Maharashtra. Harshali has over five years of experience in research and teaching, having worked as an ad-hoc Assistant Professor and visiting lecturer. She has contributed to field-based research projects on urban inclusion, infrastructure impact, and village profiling. She has presented papers and published articles at National and International conferences.",
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/harshali-ghule-0a4287143/",
         facebook: "#",
         instagram: "#",
         twitter: "#"
